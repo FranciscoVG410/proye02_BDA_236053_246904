@@ -4,6 +4,8 @@
  */
 package forms;
 
+import java.awt.Color;
+
 /**
  *
  * @author franc
@@ -27,41 +29,58 @@ public class frmTramites extends javax.swing.JFrame {
     private void initComponents() {
 
         jPanel1 = new javax.swing.JPanel();
-        jButton3 = new javax.swing.JButton();
-        jButton2 = new javax.swing.JButton();
-        jButton1 = new javax.swing.JButton();
+        btnTramitesAtras = new javax.swing.JButton();
+        btnPlacas = new javax.swing.JButton();
+        btnLicencias = new javax.swing.JButton();
         jLabel1 = new javax.swing.JLabel();
         jLabel2 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
+        jPanel1.setBackground(new java.awt.Color(255, 255, 255));
         jPanel1.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        jButton3.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
-        jButton3.setText("Atras");
-        jButton3.addActionListener(new java.awt.event.ActionListener() {
+        btnTramitesAtras.setFont(new java.awt.Font("Dialog", 1, 18)); // NOI18N
+        btnTramitesAtras.setForeground(new java.awt.Color(0, 102, 102));
+        btnTramitesAtras.setText("Atras");
+        btnTramitesAtras.setBorder(null);
+        btnTramitesAtras.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton3ActionPerformed(evt);
+                btnTramitesAtrasActionPerformed(evt);
             }
         });
-        jPanel1.add(jButton3, new org.netbeans.lib.awtextra.AbsoluteConstraints(25, 372, 97, -1));
+        jPanel1.add(btnTramitesAtras, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 340, 170, 90));
 
-        jButton2.setText("PLACAS");
-        jPanel1.add(jButton2, new org.netbeans.lib.awtextra.AbsoluteConstraints(377, 260, 350, 55));
+        btnPlacas.setFont(new java.awt.Font("Dialog", 1, 18)); // NOI18N
+        btnPlacas.setForeground(new java.awt.Color(0, 102, 102));
+        btnPlacas.setText("PLACAS");
+        btnPlacas.setBorder(null);
+        jPanel1.add(btnPlacas, new org.netbeans.lib.awtextra.AbsoluteConstraints(377, 260, 360, 55));
 
-        jButton1.setText("LICENCIAS");
-        jButton1.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton1ActionPerformed(evt);
+        btnLicencias.setFont(new java.awt.Font("Dialog", 1, 18)); // NOI18N
+        btnLicencias.setForeground(new java.awt.Color(0, 102, 102));
+        btnLicencias.setText("LICENCIAS");
+        btnLicencias.setBorder(null);
+        btnLicencias.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseEntered(java.awt.event.MouseEvent evt) {
+                btnLicenciasMouseEntered(evt);
+            }
+            public void mouseExited(java.awt.event.MouseEvent evt) {
+                btnLicenciasMouseExited(evt);
             }
         });
-        jPanel1.add(jButton1, new org.netbeans.lib.awtextra.AbsoluteConstraints(4, 260, 360, 55));
+        btnLicencias.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnLicenciasActionPerformed(evt);
+            }
+        });
+        jPanel1.add(btnLicencias, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 260, 360, 55));
 
         jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/licencia.png"))); // NOI18N
-        jPanel1.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 370, 340));
+        jPanel1.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 360, 340));
 
         jLabel2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/nissan-altima-2866605_1280 (1).jpg"))); // NOI18N
-        jPanel1.add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(367, 0, 370, 340));
+        jPanel1.add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(377, 0, 360, 340));
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -77,13 +96,27 @@ public class frmTramites extends javax.swing.JFrame {
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
+    private void btnLicenciasActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnLicenciasActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_jButton1ActionPerformed
+        frmLicencias formLicencia = new frmLicencias();
+        formLicencia.setVisible(true);
+    }//GEN-LAST:event_btnLicenciasActionPerformed
 
-    private void jButton3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton3ActionPerformed
+    private void btnTramitesAtrasActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnTramitesAtrasActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_jButton3ActionPerformed
+        frmMenu btnBack = new frmMenu();
+        btnBack.setVisible(true);
+    }//GEN-LAST:event_btnTramitesAtrasActionPerformed
+
+    private void btnLicenciasMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnLicenciasMouseEntered
+        // TODO add your handling code here:
+        btnLicencias.setBackground(new Color(204,255,255));
+    }//GEN-LAST:event_btnLicenciasMouseEntered
+
+    private void btnLicenciasMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnLicenciasMouseExited
+        // TODO add your handling code here:
+        btnLicencias.setBackground(Color.WHITE);
+    }//GEN-LAST:event_btnLicenciasMouseExited
 
     /**
      * @param args the command line arguments
@@ -121,9 +154,9 @@ public class frmTramites extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JButton jButton1;
-    private javax.swing.JButton jButton2;
-    private javax.swing.JButton jButton3;
+    private javax.swing.JButton btnLicencias;
+    private javax.swing.JButton btnPlacas;
+    private javax.swing.JButton btnTramitesAtras;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JPanel jPanel1;
