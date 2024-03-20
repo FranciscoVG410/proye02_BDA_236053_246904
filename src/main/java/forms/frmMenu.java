@@ -4,6 +4,8 @@
  */
 package forms;
 
+import java.awt.Color;
+
 /**
  *
  * @author franc
@@ -27,69 +29,140 @@ public class frmMenu extends javax.swing.JFrame {
     private void initComponents() {
 
         jPanel1 = new javax.swing.JPanel();
+        jLabel2 = new javax.swing.JLabel();
+        jPanel2 = new javax.swing.JPanel();
         btnTramites = new javax.swing.JButton();
         btnGenerarReporte = new javax.swing.JButton();
-        jButton3 = new javax.swing.JButton();
-        jButton4 = new javax.swing.JButton();
+        btnGenerarConsulta = new javax.swing.JButton();
+        btnCerar = new javax.swing.JButton();
+        jLabel3 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
-        btnTramites.setFont(new java.awt.Font("Dialog", 1, 36)); // NOI18N
-        btnTramites.setText("TRAMITES");
+        jPanel1.setBackground(new java.awt.Color(255, 255, 255));
+        jPanel1.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+
+        jLabel2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/architecture-1048092_1280 (1).png"))); // NOI18N
+        jPanel1.add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(278, 0, 460, 430));
+
+        jPanel2.setBackground(new java.awt.Color(255, 255, 255));
+
+        btnTramites.setFont(new java.awt.Font("Dialog", 1, 18)); // NOI18N
+        btnTramites.setForeground(new java.awt.Color(0, 102, 102));
+        btnTramites.setText("   TRAMITES");
+        btnTramites.setBorder(null);
+        btnTramites.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
+        btnTramites.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
+        btnTramites.setRolloverEnabled(false);
+        btnTramites.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                btnTramitesMouseClicked(evt);
+            }
+            public void mouseEntered(java.awt.event.MouseEvent evt) {
+                btnTramitesMouseEntered(evt);
+            }
+            public void mouseExited(java.awt.event.MouseEvent evt) {
+                btnTramitesMouseExited(evt);
+            }
+        });
         btnTramites.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btnTramitesActionPerformed(evt);
             }
         });
 
-        btnGenerarReporte.setFont(new java.awt.Font("Dialog", 1, 24)); // NOI18N
-        btnGenerarReporte.setText("GENERAR REPORTE");
+        btnGenerarReporte.setFont(new java.awt.Font("Dialog", 1, 18)); // NOI18N
+        btnGenerarReporte.setForeground(new java.awt.Color(0, 102, 102));
+        btnGenerarReporte.setText("   GENERAR REPORTE");
+        btnGenerarReporte.setBorder(null);
+        btnGenerarReporte.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
         btnGenerarReporte.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
+        btnGenerarReporte.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseEntered(java.awt.event.MouseEvent evt) {
+                btnGenerarReporteMouseEntered(evt);
+            }
+            public void mouseExited(java.awt.event.MouseEvent evt) {
+                btnGenerarReporteMouseExited(evt);
+            }
+        });
 
-        jButton3.setFont(new java.awt.Font("Dialog", 1, 24)); // NOI18N
-        jButton3.setText("GENERAR CONSULTA");
+        btnGenerarConsulta.setFont(new java.awt.Font("Dialog", 1, 18)); // NOI18N
+        btnGenerarConsulta.setForeground(new java.awt.Color(0, 102, 102));
+        btnGenerarConsulta.setText("   GENERAR CONSULTA");
+        btnGenerarConsulta.setBorder(null);
+        btnGenerarConsulta.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
+        btnGenerarConsulta.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseEntered(java.awt.event.MouseEvent evt) {
+                btnGenerarConsultaMouseEntered(evt);
+            }
+            public void mouseExited(java.awt.event.MouseEvent evt) {
+                btnGenerarConsultaMouseExited(evt);
+            }
+        });
+        btnGenerarConsulta.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnGenerarConsultaActionPerformed(evt);
+            }
+        });
 
-        jButton4.setText("jButton4");
+        btnCerar.setFont(new java.awt.Font("Dialog", 1, 14)); // NOI18N
+        btnCerar.setText("Cerrar");
+        btnCerar.setBorder(null);
+        btnCerar.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                btnCerarMouseClicked(evt);
+            }
+        });
 
-        javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
-        jPanel1.setLayout(jPanel1Layout);
-        jPanel1Layout.setHorizontalGroup(
-            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
-                .addGap(40, 40, 40)
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(btnTramites, javax.swing.GroupLayout.PREFERRED_SIZE, 275, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jButton4, javax.swing.GroupLayout.PREFERRED_SIZE, 121, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addGap(41, 41, 41)
-                        .addComponent(jButton3))
-                    .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addComponent(btnGenerarReporte, javax.swing.GroupLayout.PREFERRED_SIZE, 287, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addContainerGap(56, Short.MAX_VALUE))
+        jLabel3.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        jLabel3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/PLV (2).png"))); // NOI18N
+
+        javax.swing.GroupLayout jPanel2Layout = new javax.swing.GroupLayout(jPanel2);
+        jPanel2.setLayout(jPanel2Layout);
+        jPanel2Layout.setHorizontalGroup(
+            jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel2Layout.createSequentialGroup()
+                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(btnGenerarConsulta, javax.swing.GroupLayout.DEFAULT_SIZE, 274, Short.MAX_VALUE)
+                    .addComponent(btnGenerarReporte, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addGroup(jPanel2Layout.createSequentialGroup()
+                        .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addGroup(jPanel2Layout.createSequentialGroup()
+                                .addContainerGap()
+                                .addComponent(btnCerar, javax.swing.GroupLayout.PREFERRED_SIZE, 121, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                                .addGroup(jPanel2Layout.createSequentialGroup()
+                                    .addContainerGap()
+                                    .addComponent(jLabel3, javax.swing.GroupLayout.DEFAULT_SIZE, 268, Short.MAX_VALUE))
+                                .addComponent(btnTramites, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
+                        .addGap(0, 0, Short.MAX_VALUE)))
+                .addContainerGap())
         );
-        jPanel1Layout.setVerticalGroup(
-            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel1Layout.createSequentialGroup()
-                .addGap(105, 105, 105)
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addComponent(btnTramites, javax.swing.GroupLayout.PREFERRED_SIZE, 168, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 55, Short.MAX_VALUE)
-                        .addComponent(jButton4, javax.swing.GroupLayout.PREFERRED_SIZE, 39, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addComponent(btnGenerarReporte, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                        .addComponent(jButton3, javax.swing.GroupLayout.PREFERRED_SIZE, 122, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addGap(33, 33, 33))
+        jPanel2Layout.setVerticalGroup(
+            jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel2Layout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(jLabel3)
+                .addGap(18, 18, 18)
+                .addComponent(btnTramites, javax.swing.GroupLayout.PREFERRED_SIZE, 55, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(btnGenerarReporte, javax.swing.GroupLayout.PREFERRED_SIZE, 55, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(btnGenerarConsulta, javax.swing.GroupLayout.PREFERRED_SIZE, 55, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 90, Short.MAX_VALUE)
+                .addComponent(btnCerar, javax.swing.GroupLayout.PREFERRED_SIZE, 39, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(20, 20, 20))
         );
+
+        jPanel1.add(jPanel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 270, 430));
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .addGroup(layout.createSequentialGroup()
+                .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(0, 0, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -101,7 +174,53 @@ public class frmMenu extends javax.swing.JFrame {
 
     private void btnTramitesActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnTramitesActionPerformed
         // TODO add your handling code here:
+        frmTramites formTramite = new frmTramites();
+        formTramite.setVisible(true);
     }//GEN-LAST:event_btnTramitesActionPerformed
+
+    private void btnGenerarConsultaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnGenerarConsultaActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_btnGenerarConsultaActionPerformed
+
+    private void btnTramitesMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnTramitesMouseClicked
+        // TODO add your handling code here:
+        
+    }//GEN-LAST:event_btnTramitesMouseClicked
+
+    private void btnCerarMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnCerarMouseClicked
+        // TODO add your handling code here:
+        System.exit(0);
+    }//GEN-LAST:event_btnCerarMouseClicked
+
+    private void btnTramitesMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnTramitesMouseEntered
+        // TODO add your handling code here:
+        btnTramites.setBackground(new Color(204,255,255));
+    }//GEN-LAST:event_btnTramitesMouseEntered
+
+    private void btnGenerarReporteMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnGenerarReporteMouseEntered
+        // TODO add your handling code here:
+        btnGenerarReporte.setBackground(new Color(204,255,255));
+    }//GEN-LAST:event_btnGenerarReporteMouseEntered
+
+    private void btnGenerarConsultaMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnGenerarConsultaMouseEntered
+        // TODO add your handling code here:
+        btnGenerarConsulta.setBackground(new Color(204,255,255));
+    }//GEN-LAST:event_btnGenerarConsultaMouseEntered
+
+    private void btnTramitesMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnTramitesMouseExited
+        // TODO add your handling code here:
+        btnTramites.setBackground(Color.WHITE);
+    }//GEN-LAST:event_btnTramitesMouseExited
+
+    private void btnGenerarReporteMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnGenerarReporteMouseExited
+        // TODO add your handling code here:
+        btnGenerarReporte.setBackground(Color.WHITE);
+    }//GEN-LAST:event_btnGenerarReporteMouseExited
+
+    private void btnGenerarConsultaMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnGenerarConsultaMouseExited
+        // TODO add your handling code here:
+        btnGenerarConsulta.setBackground(Color.WHITE);
+    }//GEN-LAST:event_btnGenerarConsultaMouseExited
 
     /**
      * @param args the command line arguments
@@ -130,6 +249,8 @@ public class frmMenu extends javax.swing.JFrame {
         }
         //</editor-fold>
 
+        
+        
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
@@ -139,10 +260,13 @@ public class frmMenu extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JButton btnCerar;
+    private javax.swing.JButton btnGenerarConsulta;
     private javax.swing.JButton btnGenerarReporte;
     private javax.swing.JButton btnTramites;
-    private javax.swing.JButton jButton3;
-    private javax.swing.JButton jButton4;
+    private javax.swing.JLabel jLabel2;
+    private javax.swing.JLabel jLabel3;
     private javax.swing.JPanel jPanel1;
+    private javax.swing.JPanel jPanel2;
     // End of variables declaration//GEN-END:variables
 }

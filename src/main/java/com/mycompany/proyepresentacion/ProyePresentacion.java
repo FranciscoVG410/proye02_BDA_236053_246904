@@ -4,6 +4,8 @@
 
 package com.mycompany.proyepresentacion;
 
+import forms.frmMenu;
+
 /**
  *
  * @author franc
@@ -11,6 +13,7 @@ package com.mycompany.proyepresentacion;
 public class ProyePresentacion {
 
     public static void main(String[] args) {
-        System.out.println("Hello World!");
+        frmMenu menu = new frmMenu();
+        menu.setVisible(true);
     }
 }
