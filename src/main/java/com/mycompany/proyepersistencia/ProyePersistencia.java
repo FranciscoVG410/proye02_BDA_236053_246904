@@ -4,6 +4,10 @@
 
 package com.mycompany.proyepersistencia;
 
+import javax.persistence.EntityManager;
+import javax.persistence.EntityManagerFactory;
+import javax.persistence.Persistence;
+
 /**
  *
  * @author franc
@@ -11,6 +15,29 @@ package com.mycompany.proyepersistencia;
 public class ProyePersistencia {
 
     public static void main(String[] args) {
-        System.out.println("Hello World!");
+        EntityManagerFactory managerFactory = null;
+        EntityManager entityManager = null;
+        try {
+            managerFactory = Persistence.createEntityManagerFactory("ConexionJPA");
+            entityManager = managerFactory.createEntityManager();
+            entityManager.getTransaction().begin();
+
+            // Aquí va tu lógica de persistencia
+
+            entityManager.getTransaction().commit();
+            System.out.println("Transacción completada correctamente");
+        } catch (Exception e) {
+            if (entityManager != null && entityManager.getTransaction().isActive()) {
+                entityManager.getTransaction().rollback();
+            }
+            e.printStackTrace(); // O cualquier otra forma de manejo de errores que prefieras
+        } finally {
+            if (entityManager != null) {
+                entityManager.close();
+            }
+            if (managerFactory != null) {
+                managerFactory.close();
+            }
+        }
     }
 }
