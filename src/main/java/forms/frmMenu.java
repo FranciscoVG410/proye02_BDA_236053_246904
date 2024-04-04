@@ -85,6 +85,11 @@ public class frmMenu extends javax.swing.JFrame {
                 btnGenerarReporteMouseExited(evt);
             }
         });
+        btnGenerarReporte.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnGenerarReporteActionPerformed(evt);
+            }
+        });
 
         btnGenerarConsulta.setFont(new java.awt.Font("Dialog", 1, 18)); // NOI18N
         btnGenerarConsulta.setForeground(new java.awt.Color(0, 102, 102));
@@ -111,6 +116,11 @@ public class frmMenu extends javax.swing.JFrame {
         btnCerar.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
                 btnCerarMouseClicked(evt);
+            }
+        });
+        btnCerar.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnCerarActionPerformed(evt);
             }
         });
 
@@ -221,6 +231,14 @@ public class frmMenu extends javax.swing.JFrame {
         // TODO add your handling code here:
         btnGenerarConsulta.setBackground(Color.WHITE);
     }//GEN-LAST:event_btnGenerarConsultaMouseExited
+
+    private void btnGenerarReporteActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnGenerarReporteActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_btnGenerarReporteActionPerformed
+
+    private void btnCerarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnCerarActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_btnCerarActionPerformed
 
     /**
      * @param args the command line arguments

@@ -3,7 +3,7 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/GUIForms/JFrame.java to edit this template
  */
 package forms;
-
+import Negocio.crearLicencia;
 import java.awt.Color;
 
 /**
@@ -17,6 +17,7 @@ public class frmTramites extends javax.swing.JFrame {
      */
     public frmTramites() {
         initComponents();
+        crearLicencia cl = new crearLicencia();
     }
 
     /**
@@ -36,6 +37,7 @@ public class frmTramites extends javax.swing.JFrame {
         jLabel2 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         jPanel1.setBackground(new java.awt.Color(255, 255, 255));
         jPanel1.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
@@ -55,7 +57,7 @@ public class frmTramites extends javax.swing.JFrame {
         btnPlacas.setForeground(new java.awt.Color(0, 102, 102));
         btnPlacas.setText("PLACAS");
         btnPlacas.setBorder(null);
-        jPanel1.add(btnPlacas, new org.netbeans.lib.awtextra.AbsoluteConstraints(377, 260, 360, 55));
+        jPanel1.add(btnPlacas, new org.netbeans.lib.awtextra.AbsoluteConstraints(377, 260, 340, 55));
 
         btnLicencias.setFont(new java.awt.Font("Dialog", 1, 18)); // NOI18N
         btnLicencias.setForeground(new java.awt.Color(0, 102, 102));
@@ -74,24 +76,15 @@ public class frmTramites extends javax.swing.JFrame {
                 btnLicenciasActionPerformed(evt);
             }
         });
-        jPanel1.add(btnLicencias, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 260, 360, 55));
+        jPanel1.add(btnLicencias, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 260, 340, 55));
 
         jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/licencia.png"))); // NOI18N
-        jPanel1.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 360, 340));
+        jPanel1.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 20, 340, 320));
 
         jLabel2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/nissan-altima-2866605_1280 (1).jpg"))); // NOI18N
-        jPanel1.add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(377, 0, 360, 340));
+        jPanel1.add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(377, 20, 340, 320));
 
-        javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
-        getContentPane().setLayout(layout);
-        layout.setHorizontalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-        );
-        layout.setVerticalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-        );
+        getContentPane().add(jPanel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, -1, -1));
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
@@ -100,6 +93,7 @@ public class frmTramites extends javax.swing.JFrame {
         // TODO add your handling code here:
         frmLicencias formLicencia = new frmLicencias();
         formLicencia.setVisible(true);
+        
     }//GEN-LAST:event_btnLicenciasActionPerformed
 
     private void btnTramitesAtrasActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnTramitesAtrasActionPerformed
