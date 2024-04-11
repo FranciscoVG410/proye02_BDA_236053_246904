@@ -4,9 +4,21 @@
  */
 package forms;
 
+import DTO.LicenciaDTO;
+import DTO.PersonaDTO;
+import DTO.PlacaDTO;
+import Negocio.ObtenerLicencia;
+import Negocio.ObtenerPersona;
+import Negocio.ObtenerPlaca;
+import java.text.SimpleDateFormat;
+import java.util.List;
+import javax.swing.JOptionPane;
+import javax.swing.table.DefaultTableModel;
+
 /**
  *
- * @author franc
+ * @author Francisco Valdez Gastelum
+ *         00000246904
  */
 public class frmGenerarConsulta extends javax.swing.JFrame {
 
@@ -26,21 +38,342 @@ public class frmGenerarConsulta extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        jPanel1 = new javax.swing.JPanel();
+        jPanel2 = new javax.swing.JPanel();
+        jScrollPane1 = new javax.swing.JScrollPane();
+        tblObj = new javax.swing.JTable();
+        btnBuscarPlacas = new javax.swing.JButton();
+        btnBuscarLicencias = new javax.swing.JButton();
+        dateNacimiento = new com.github.lgooddatepicker.components.DatePicker();
+        btnBuscarPersonaConsulta = new javax.swing.JButton();
+        lblRFC = new javax.swing.JLabel();
+        jLabel1 = new javax.swing.JLabel();
+        comboBoxCriterioBusqueda = new javax.swing.JComboBox<>();
+        lblRFC1 = new javax.swing.JLabel();
+        txtRFC = new javax.swing.JTextField();
+        lblRFC2 = new javax.swing.JLabel();
+        txtNombresSimilares = new javax.swing.JTextField();
+        comboBoxPersonasSimilares = new javax.swing.JComboBox<>();
+        lblRFC3 = new javax.swing.JLabel();
+        btnAtrasGenerarConsulta = new javax.swing.JButton();
 
-        javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
-        getContentPane().setLayout(layout);
-        layout.setHorizontalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 737, Short.MAX_VALUE)
+        setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+
+        jPanel1.setBackground(new java.awt.Color(255, 255, 255));
+
+        jPanel2.setBackground(new java.awt.Color(0, 51, 102));
+
+        tblObj.setModel(new javax.swing.table.DefaultTableModel(
+            new Object [][] {
+                {null, null, null, null},
+                {null, null, null, null},
+                {null, null, null, null},
+                {null, null, null, null}
+            },
+            new String [] {
+                "Atributo 1", "Atributo 2", "Atributo 3", "Atributo 4"
+            }
+        ));
+        jScrollPane1.setViewportView(tblObj);
+
+        btnBuscarPlacas.setText("Buscar Placas");
+        btnBuscarPlacas.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnBuscarPlacasActionPerformed(evt);
+            }
+        });
+
+        btnBuscarLicencias.setText("Buscar Licencias");
+        btnBuscarLicencias.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnBuscarLicenciasActionPerformed(evt);
+            }
+        });
+
+        javax.swing.GroupLayout jPanel2Layout = new javax.swing.GroupLayout(jPanel2);
+        jPanel2.setLayout(jPanel2Layout);
+        jPanel2Layout.setHorizontalGroup(
+            jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel2Layout.createSequentialGroup()
+                .addContainerGap(17, Short.MAX_VALUE)
+                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                    .addGroup(jPanel2Layout.createSequentialGroup()
+                        .addComponent(btnBuscarPlacas, javax.swing.GroupLayout.PREFERRED_SIZE, 134, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addComponent(btnBuscarLicencias, javax.swing.GroupLayout.PREFERRED_SIZE, 119, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 442, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(26, 26, 26))
         );
-        layout.setVerticalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 430, Short.MAX_VALUE)
+        jPanel2Layout.setVerticalGroup(
+            jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel2Layout.createSequentialGroup()
+                .addGap(16, 16, 16)
+                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 347, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                    .addComponent(btnBuscarPlacas, javax.swing.GroupLayout.DEFAULT_SIZE, 40, Short.MAX_VALUE)
+                    .addComponent(btnBuscarLicencias, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addContainerGap(15, Short.MAX_VALUE))
         );
+
+        dateNacimiento.setEnabled(false);
+
+        btnBuscarPersonaConsulta.setText("BUSCAR PERSONA");
+        btnBuscarPersonaConsulta.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnBuscarPersonaConsultaActionPerformed(evt);
+            }
+        });
+
+        lblRFC.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        lblRFC.setText("Fecha de nacimiento");
+
+        jLabel1.setText("Criterio de busqueda");
+
+        comboBoxCriterioBusqueda.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "RFC", "Nombres", "Fecha nacimiento" }));
+        comboBoxCriterioBusqueda.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                comboBoxCriterioBusquedaActionPerformed(evt);
+            }
+        });
+
+        lblRFC1.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        lblRFC1.setText("RFC");
+
+        lblRFC2.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        lblRFC2.setText("Nombres similares");
+
+        txtNombresSimilares.setEditable(false);
+
+        lblRFC3.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        lblRFC3.setText("Personas similares");
+
+        btnAtrasGenerarConsulta.setText("ATRAS");
+        btnAtrasGenerarConsulta.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnAtrasGenerarConsultaActionPerformed(evt);
+            }
+        });
+
+        javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
+        jPanel1.setLayout(jPanel1Layout);
+        jPanel1Layout.setHorizontalGroup(
+            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(jPanel1Layout.createSequentialGroup()
+                        .addGap(63, 63, 63)
+                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                            .addComponent(jLabel1)
+                            .addComponent(comboBoxCriterioBusqueda, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                            .addComponent(lblRFC1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
+                    .addGroup(jPanel1Layout.createSequentialGroup()
+                        .addGap(60, 60, 60)
+                        .addComponent(lblRFC))
+                    .addGroup(jPanel1Layout.createSequentialGroup()
+                        .addGap(40, 40, 40)
+                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(txtNombresSimilares, javax.swing.GroupLayout.PREFERRED_SIZE, 146, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                                .addComponent(dateNacimiento, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addComponent(lblRFC2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                .addComponent(txtRFC, javax.swing.GroupLayout.PREFERRED_SIZE, 150, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addComponent(comboBoxPersonasSimilares, javax.swing.GroupLayout.PREFERRED_SIZE, 156, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                    .addGroup(jPanel1Layout.createSequentialGroup()
+                        .addGap(60, 60, 60)
+                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(btnBuscarPersonaConsulta)
+                            .addGroup(jPanel1Layout.createSequentialGroup()
+                                .addGap(18, 18, 18)
+                                .addComponent(lblRFC3))))
+                    .addComponent(btnAtrasGenerarConsulta, javax.swing.GroupLayout.PREFERRED_SIZE, 196, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 41, Short.MAX_VALUE)
+                .addComponent(jPanel2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+        );
+        jPanel1Layout.setVerticalGroup(
+            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addComponent(jPanel2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .addGroup(jPanel1Layout.createSequentialGroup()
+                .addGap(35, 35, 35)
+                .addComponent(jLabel1)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addComponent(comboBoxCriterioBusqueda, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(18, 18, 18)
+                .addComponent(lblRFC1)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(txtRFC, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(18, 18, 18)
+                .addComponent(lblRFC2)
+                .addGap(1, 1, 1)
+                .addComponent(txtNombresSimilares, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(lblRFC)
+                .addGap(18, 18, 18)
+                .addComponent(dateNacimiento, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(18, 18, 18)
+                .addComponent(btnBuscarPersonaConsulta)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addComponent(lblRFC3)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addComponent(comboBoxPersonasSimilares, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(18, 18, 18)
+                .addComponent(btnAtrasGenerarConsulta, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+        );
+
+        getContentPane().add(jPanel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 740, 430));
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
+
+    private void comboBoxCriterioBusquedaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_comboBoxCriterioBusquedaActionPerformed
+        int seleccion = comboBoxCriterioBusqueda.getSelectedIndex();
+        if(seleccion == 0){
+            txtRFC.setEditable(true);
+            txtRFC.setText("");
+            txtNombresSimilares.setEditable(false);
+            txtNombresSimilares.setText("");
+            dateNacimiento.setEnabled(false);
+        }else if(seleccion == 1){
+            txtRFC.setEditable(false);
+            txtNombresSimilares.setEditable(true);
+            dateNacimiento.setEnabled(false);
+            txtRFC.setText("");
+            txtNombresSimilares.setText("");
+        }else if(seleccion == 2){
+            txtRFC.setEditable(false);
+            txtNombresSimilares.setEditable(false);
+            dateNacimiento.setEnabled(true);
+            txtRFC.setText("");
+            txtNombresSimilares.setText("");
+        }
+    }//GEN-LAST:event_comboBoxCriterioBusquedaActionPerformed
+
+    private void btnBuscarPersonaConsultaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnBuscarPersonaConsultaActionPerformed
+         ObtenerPersona obtener = new ObtenerPersona();
+         comboBoxPersonasSimilares.removeAllItems();
+        if(txtRFC.isEditable()){
+        //Busca por rfc
+        String rfc = txtRFC.getText();
+        try {
+               
+                PersonaDTO p = obtener.obtenerPersona(rfc);
+                comboBoxPersonasSimilares.addItem(p.getId() + " "+ p.getNombres() + " "+ p.getApellidoP() + " "+ p.getApellidoM());
+        }catch(Exception ex){
+            JOptionPane.showMessageDialog(this, ex.getMessage(), "¡Error!", JOptionPane.ERROR_MESSAGE);
+        }
+        }else if(txtNombresSimilares.isEditable()){
+        //busca por nombres
+            List<PersonaDTO> list;
+             try {
+                 list = obtener.obtenerPorNombresSimilares(txtNombresSimilares.getText());
+                 for (PersonaDTO personaDTO : list) {
+                  comboBoxPersonasSimilares.addItem(personaDTO.getId() + " "+ personaDTO.getNombres() + " "+ personaDTO.getApellidoP() + " "+ personaDTO.getApellidoM());
+                }
+             } catch (Exception ex) {
+            JOptionPane.showMessageDialog(this, ex.getMessage(), "¡Error!", JOptionPane.ERROR_MESSAGE);
+             }
+            
+        }else if(dateNacimiento.isEnabled()){
+        //Busca por fecha de nacimiento
+        String fecha = dateNacimiento.getDateStringOrEmptyString();
+        String[] partes = fecha.split("-");
+        // Obtener el substring antes del primer espacio
+        String fechaParseada = partes[2] + "-"+ partes[1] + "-"+ partes[0];
+         List<PersonaDTO> list;
+             try {
+                 list = obtener.obtenerPorFechaNacimiento(fechaParseada);
+                 for (PersonaDTO personaDTO : list) {
+                  comboBoxPersonasSimilares.addItem(personaDTO.getId() + " "+ personaDTO.getNombres() + " "+ personaDTO.getApellidoP() + " "+ personaDTO.getApellidoM());
+                }
+             } catch (Exception ex) {
+            JOptionPane.showMessageDialog(this, ex.getMessage(), "¡Error!", JOptionPane.ERROR_MESSAGE);
+             }
+        }
+    }//GEN-LAST:event_btnBuscarPersonaConsultaActionPerformed
+
+    private void btnBuscarPlacasActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnBuscarPlacasActionPerformed
+       //Buscar placas
+       tblObj.removeAll();
+       comboBoxPersonasSimilares.getSelectedItem();
+       String[] partes = comboBoxPersonasSimilares.getSelectedItem().toString().split(" ");
+        // Obtener el substring antes del primer espacio
+        String id = partes[0];
+        Long id_long = Long.parseLong(id);
+        //PersonaDTO p = new PersonaDTO(id_long);
+        ObtenerPlaca op = new ObtenerPlaca();
+        try {
+            List<PlacaDTO> obtenidas = op.obtenerPlacasPorPersona(id_long);
+            // Crear un array de Strings con los nombres de las columnas
+            String[] columnNames = {"Numero de placa", "Precio", "Estado"};
+
+            // Crear un DefaultTableModel con las columnas y 0 filas
+            DefaultTableModel modeloTabla = new DefaultTableModel(columnNames, 0);
+
+        // Agregar las filas a partir de la lista de objetos
+        for (PlacaDTO obtenida : obtenidas) {
+            String estado = "Activa";
+            if(!obtenida.isEstadoPlaca()){
+                estado = "Desactivada";
+            }
+            Object[] rowData = {obtenida.getPlaca(), obtenida.getPrecioPlaca(), estado};
+            modeloTabla.addRow(rowData);
+        }
+         tblObj.setModel(modeloTabla);
+        } catch (Exception ex) {
+            JOptionPane.showMessageDialog(this, ex.getMessage(), "¡Error!", JOptionPane.ERROR_MESSAGE);
+        }
+        
+        
+        
+        
+    }//GEN-LAST:event_btnBuscarPlacasActionPerformed
+
+    private void btnBuscarLicenciasActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnBuscarLicenciasActionPerformed
+       //Buscar placas
+       tblObj.removeAll();
+       comboBoxPersonasSimilares.getSelectedItem();
+       String[] partes = comboBoxPersonasSimilares.getSelectedItem().toString().split(" ");
+        // Obtener el substring antes del primer espacio
+        String id = partes[0];
+        Long id_long = Long.parseLong(id);
+        //PersonaDTO p = new PersonaDTO(id_long);
+        ObtenerLicencia ol = new ObtenerLicencia();
+        try {
+            List<LicenciaDTO> obtenidas = ol.obtenerLicenciasPorPersona(id_long);
+            // Crear un array de Strings con los nombres de las columnas
+            String[] columnNames = {"Precio", "Estado", "Vigencia", "Fecha Vencimiento"};
+
+            // Crear un DefaultTableModel con las columnas y 0 filas
+            DefaultTableModel modeloTabla = new DefaultTableModel(columnNames, 0);
+
+        // Agregar las filas a partir de la lista de objetos
+        for (LicenciaDTO obtenida : obtenidas) {
+            String estado = "Activa";
+            if(!obtenida.isEstado()){
+                estado = "Desactivada";
+            }
+            
+            // Crear un objeto SimpleDateFormat para el formato deseado
+            SimpleDateFormat sdf = new SimpleDateFormat("dd-MM-yyyy");
+
+            // Parsear la fecha y obtener la cadena de texto
+            String fechaFormateada = sdf.format(obtenida.getFechaVencimiento());
+        
+            Object[] rowData = {obtenida.getCosto(), estado, obtenida.getVigencia(), fechaFormateada};
+            modeloTabla.addRow(rowData);
+        }
+         tblObj.setModel(modeloTabla);
+        } catch (Exception ex) {
+            JOptionPane.showMessageDialog(this, ex.getMessage(), "¡Error!", JOptionPane.ERROR_MESSAGE);
+        }
+    }//GEN-LAST:event_btnBuscarLicenciasActionPerformed
+
+    private void btnAtrasGenerarConsultaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnAtrasGenerarConsultaActionPerformed
+        // TODO add your handling code here:
+        frmMenu formMenu = new frmMenu();
+        formMenu.setVisible(true);
+    }//GEN-LAST:event_btnAtrasGenerarConsultaActionPerformed
 
     /**
      * @param args the command line arguments
@@ -78,5 +411,23 @@ public class frmGenerarConsulta extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JButton btnAtrasGenerarConsulta;
+    private javax.swing.JButton btnBuscarLicencias;
+    private javax.swing.JButton btnBuscarPersonaConsulta;
+    private javax.swing.JButton btnBuscarPlacas;
+    private javax.swing.JComboBox<String> comboBoxCriterioBusqueda;
+    private javax.swing.JComboBox<String> comboBoxPersonasSimilares;
+    private com.github.lgooddatepicker.components.DatePicker dateNacimiento;
+    private javax.swing.JLabel jLabel1;
+    private javax.swing.JPanel jPanel1;
+    private javax.swing.JPanel jPanel2;
+    private javax.swing.JScrollPane jScrollPane1;
+    private javax.swing.JLabel lblRFC;
+    private javax.swing.JLabel lblRFC1;
+    private javax.swing.JLabel lblRFC2;
+    private javax.swing.JLabel lblRFC3;
+    private javax.swing.JTable tblObj;
+    private javax.swing.JTextField txtNombresSimilares;
+    private javax.swing.JTextField txtRFC;
     // End of variables declaration//GEN-END:variables
 }

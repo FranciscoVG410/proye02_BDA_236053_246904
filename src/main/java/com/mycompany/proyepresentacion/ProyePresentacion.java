@@ -8,7 +8,8 @@ import forms.frmMenu;
 
 /**
  *
- * @author franc
+ * @author Francisco Valdez Gastelum
+ *         00000246904
  */
 public class ProyePresentacion {
 

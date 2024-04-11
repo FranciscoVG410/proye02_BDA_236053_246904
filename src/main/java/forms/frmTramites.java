@@ -17,7 +17,6 @@ public class frmTramites extends javax.swing.JFrame {
      */
     public frmTramites() {
         initComponents();
-        crearLicencia cl = new crearLicencia();
     }
 
     /**
@@ -57,6 +56,11 @@ public class frmTramites extends javax.swing.JFrame {
         btnPlacas.setForeground(new java.awt.Color(0, 102, 102));
         btnPlacas.setText("PLACAS");
         btnPlacas.setBorder(null);
+        btnPlacas.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnPlacasActionPerformed(evt);
+            }
+        });
         jPanel1.add(btnPlacas, new org.netbeans.lib.awtextra.AbsoluteConstraints(377, 260, 340, 55));
 
         btnLicencias.setFont(new java.awt.Font("Dialog", 1, 18)); // NOI18N
@@ -93,7 +97,7 @@ public class frmTramites extends javax.swing.JFrame {
         // TODO add your handling code here:
         frmLicencias formLicencia = new frmLicencias();
         formLicencia.setVisible(true);
-        
+        this.setVisible(false);
     }//GEN-LAST:event_btnLicenciasActionPerformed
 
     private void btnTramitesAtrasActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnTramitesAtrasActionPerformed
@@ -111,6 +115,12 @@ public class frmTramites extends javax.swing.JFrame {
         // TODO add your handling code here:
         btnLicencias.setBackground(Color.WHITE);
     }//GEN-LAST:event_btnLicenciasMouseExited
+
+    private void btnPlacasActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnPlacasActionPerformed
+        // TODO add your handling code here:
+        frmPlacas formPlaca = new frmPlacas();
+        formPlaca.setVisible(true);
+    }//GEN-LAST:event_btnPlacasActionPerformed
 
     /**
      * @param args the command line arguments

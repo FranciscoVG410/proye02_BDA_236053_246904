@@ -34,8 +34,9 @@ public class frmMenu extends javax.swing.JFrame {
         btnTramites = new javax.swing.JButton();
         btnGenerarReporte = new javax.swing.JButton();
         btnGenerarConsulta = new javax.swing.JButton();
-        btnCerar = new javax.swing.JButton();
+        btnCerrar = new javax.swing.JButton();
         jLabel3 = new javax.swing.JLabel();
+        btnInsertMasivo = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -110,22 +111,41 @@ public class frmMenu extends javax.swing.JFrame {
             }
         });
 
-        btnCerar.setFont(new java.awt.Font("Dialog", 1, 14)); // NOI18N
-        btnCerar.setText("Cerrar");
-        btnCerar.setBorder(null);
-        btnCerar.addMouseListener(new java.awt.event.MouseAdapter() {
+        btnCerrar.setFont(new java.awt.Font("Dialog", 1, 14)); // NOI18N
+        btnCerrar.setText("Cerrar");
+        btnCerrar.setBorder(null);
+        btnCerrar.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
-                btnCerarMouseClicked(evt);
+                btnCerrarMouseClicked(evt);
             }
         });
-        btnCerar.addActionListener(new java.awt.event.ActionListener() {
+        btnCerrar.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btnCerarActionPerformed(evt);
+                btnCerrarActionPerformed(evt);
             }
         });
 
         jLabel3.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabel3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/PLV (2).png"))); // NOI18N
+
+        btnInsertMasivo.setFont(new java.awt.Font("Dialog", 1, 18)); // NOI18N
+        btnInsertMasivo.setForeground(new java.awt.Color(0, 102, 102));
+        btnInsertMasivo.setText("   INSERTAR PERSONAS");
+        btnInsertMasivo.setBorder(null);
+        btnInsertMasivo.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
+        btnInsertMasivo.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseEntered(java.awt.event.MouseEvent evt) {
+                btnInsertMasivoMouseEntered(evt);
+            }
+            public void mouseExited(java.awt.event.MouseEvent evt) {
+                btnInsertMasivoMouseExited(evt);
+            }
+        });
+        btnInsertMasivo.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnInsertMasivoActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout jPanel2Layout = new javax.swing.GroupLayout(jPanel2);
         jPanel2.setLayout(jPanel2Layout);
@@ -139,13 +159,14 @@ public class frmMenu extends javax.swing.JFrame {
                         .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addGroup(jPanel2Layout.createSequentialGroup()
                                 .addContainerGap()
-                                .addComponent(btnCerar, javax.swing.GroupLayout.PREFERRED_SIZE, 121, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                .addComponent(btnCerrar, javax.swing.GroupLayout.PREFERRED_SIZE, 121, javax.swing.GroupLayout.PREFERRED_SIZE))
                             .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                                 .addGroup(jPanel2Layout.createSequentialGroup()
                                     .addContainerGap()
                                     .addComponent(jLabel3, javax.swing.GroupLayout.DEFAULT_SIZE, 268, Short.MAX_VALUE))
                                 .addComponent(btnTramites, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
-                        .addGap(0, 0, Short.MAX_VALUE)))
+                        .addGap(0, 0, Short.MAX_VALUE))
+                    .addComponent(btnInsertMasivo, javax.swing.GroupLayout.DEFAULT_SIZE, 274, Short.MAX_VALUE))
                 .addContainerGap())
         );
         jPanel2Layout.setVerticalGroup(
@@ -159,8 +180,10 @@ public class frmMenu extends javax.swing.JFrame {
                 .addComponent(btnGenerarReporte, javax.swing.GroupLayout.PREFERRED_SIZE, 55, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(btnGenerarConsulta, javax.swing.GroupLayout.PREFERRED_SIZE, 55, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 90, Short.MAX_VALUE)
-                .addComponent(btnCerar, javax.swing.GroupLayout.PREFERRED_SIZE, 39, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(btnInsertMasivo, javax.swing.GroupLayout.PREFERRED_SIZE, 55, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 29, Short.MAX_VALUE)
+                .addComponent(btnCerrar, javax.swing.GroupLayout.PREFERRED_SIZE, 39, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(20, 20, 20))
         );
 
@@ -190,6 +213,8 @@ public class frmMenu extends javax.swing.JFrame {
 
     private void btnGenerarConsultaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnGenerarConsultaActionPerformed
         // TODO add your handling code here:
+        frmGenerarConsulta formGenerarConsulta = new frmGenerarConsulta();
+        formGenerarConsulta.setVisible(true);
     }//GEN-LAST:event_btnGenerarConsultaActionPerformed
 
     private void btnTramitesMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnTramitesMouseClicked
@@ -197,10 +222,10 @@ public class frmMenu extends javax.swing.JFrame {
         
     }//GEN-LAST:event_btnTramitesMouseClicked
 
-    private void btnCerarMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnCerarMouseClicked
+    private void btnCerrarMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnCerrarMouseClicked
         // TODO add your handling code here:
         System.exit(0);
-    }//GEN-LAST:event_btnCerarMouseClicked
+    }//GEN-LAST:event_btnCerrarMouseClicked
 
     private void btnTramitesMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnTramitesMouseEntered
         // TODO add your handling code here:
@@ -234,11 +259,26 @@ public class frmMenu extends javax.swing.JFrame {
 
     private void btnGenerarReporteActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnGenerarReporteActionPerformed
         // TODO add your handling code here:
+        frmGenerarReporte formGenerarReporte = new frmGenerarReporte();
+        formGenerarReporte.setVisible(true);
     }//GEN-LAST:event_btnGenerarReporteActionPerformed
 
-    private void btnCerarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnCerarActionPerformed
+    private void btnCerrarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnCerrarActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_btnCerarActionPerformed
+        System.exit(0);
+    }//GEN-LAST:event_btnCerrarActionPerformed
+
+    private void btnInsertMasivoMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnInsertMasivoMouseEntered
+        // TODO add your handling code here:
+    }//GEN-LAST:event_btnInsertMasivoMouseEntered
+
+    private void btnInsertMasivoMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnInsertMasivoMouseExited
+        // TODO add your handling code here:
+    }//GEN-LAST:event_btnInsertMasivoMouseExited
+
+    private void btnInsertMasivoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnInsertMasivoActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_btnInsertMasivoActionPerformed
 
     /**
      * @param args the command line arguments
@@ -278,9 +318,10 @@ public class frmMenu extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JButton btnCerar;
+    private javax.swing.JButton btnCerrar;
     private javax.swing.JButton btnGenerarConsulta;
     private javax.swing.JButton btnGenerarReporte;
+    private javax.swing.JButton btnInsertMasivo;
     private javax.swing.JButton btnTramites;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;

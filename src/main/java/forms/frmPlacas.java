@@ -27,11 +27,11 @@ public class frmPlacas extends javax.swing.JFrame {
     private void initComponents() {
 
         jPanel1 = new javax.swing.JPanel();
-        jButton2 = new javax.swing.JButton();
-        jButton3 = new javax.swing.JButton();
+        btnAutoNuevo = new javax.swing.JButton();
+        btnAñadirPlaca = new javax.swing.JButton();
         jLabel1 = new javax.swing.JLabel();
         jLabel2 = new javax.swing.JLabel();
-        jButton1 = new javax.swing.JButton();
+        btnAtrasPlacas = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
@@ -39,15 +39,25 @@ public class frmPlacas extends javax.swing.JFrame {
         jPanel1.setBackground(new java.awt.Color(0, 51, 102));
         jPanel1.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        jButton2.setFont(new java.awt.Font("Dialog", 1, 18)); // NOI18N
-        jButton2.setForeground(new java.awt.Color(0, 51, 102));
-        jButton2.setText("Auto Nuevo");
-        jPanel1.add(jButton2, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 83, 710, 60));
+        btnAutoNuevo.setFont(new java.awt.Font("Dialog", 1, 18)); // NOI18N
+        btnAutoNuevo.setForeground(new java.awt.Color(0, 51, 102));
+        btnAutoNuevo.setText("Registrar vehiculo");
+        btnAutoNuevo.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnAutoNuevoActionPerformed(evt);
+            }
+        });
+        jPanel1.add(btnAutoNuevo, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 83, 710, 60));
 
-        jButton3.setFont(new java.awt.Font("Dialog", 1, 18)); // NOI18N
-        jButton3.setForeground(new java.awt.Color(0, 51, 102));
-        jButton3.setText("Auto Usado");
-        jPanel1.add(jButton3, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 271, 710, 70));
+        btnAñadirPlaca.setFont(new java.awt.Font("Dialog", 1, 18)); // NOI18N
+        btnAñadirPlaca.setForeground(new java.awt.Color(0, 51, 102));
+        btnAñadirPlaca.setText("Añadir placa");
+        btnAñadirPlaca.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnAñadirPlacaActionPerformed(evt);
+            }
+        });
+        jPanel1.add(btnAñadirPlaca, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 271, 710, 70));
 
         jLabel1.setBackground(new java.awt.Color(153, 153, 153));
         jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/autoNuevo.png"))); // NOI18N
@@ -57,17 +67,39 @@ public class frmPlacas extends javax.swing.JFrame {
         jLabel2.setToolTipText("");
         jPanel1.add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(14, 188, -1, 169));
 
-        jButton1.setBackground(new java.awt.Color(0, 51, 102));
-        jButton1.setFont(new java.awt.Font("Dialog", 1, 18)); // NOI18N
-        jButton1.setForeground(new java.awt.Color(255, 255, 255));
-        jButton1.setText("Atras");
-        jButton1.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
-        jPanel1.add(jButton1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 375, 211, 55));
+        btnAtrasPlacas.setBackground(new java.awt.Color(0, 51, 102));
+        btnAtrasPlacas.setFont(new java.awt.Font("Dialog", 1, 18)); // NOI18N
+        btnAtrasPlacas.setForeground(new java.awt.Color(255, 255, 255));
+        btnAtrasPlacas.setText("Atras");
+        btnAtrasPlacas.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
+        btnAtrasPlacas.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnAtrasPlacasActionPerformed(evt);
+            }
+        });
+        jPanel1.add(btnAtrasPlacas, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 375, 211, 55));
 
         getContentPane().add(jPanel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 740, 430));
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
+
+    private void btnAutoNuevoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnAutoNuevoActionPerformed
+        // TODO add your handling code here:
+        frmVehiculoNuevo formAutoNuevo = new frmVehiculoNuevo();
+        formAutoNuevo.setVisible(true);
+    }//GEN-LAST:event_btnAutoNuevoActionPerformed
+
+    private void btnAñadirPlacaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnAñadirPlacaActionPerformed
+        frmGenerarPlacas frmGenerarPlacas = new frmGenerarPlacas();
+        frmGenerarPlacas.setVisible(true);
+    }//GEN-LAST:event_btnAñadirPlacaActionPerformed
+
+    private void btnAtrasPlacasActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnAtrasPlacasActionPerformed
+        // TODO add your handling code here:
+        frmTramites formGenerarPlacas = new frmTramites();
+        formGenerarPlacas.setVisible(true);
+    }//GEN-LAST:event_btnAtrasPlacasActionPerformed
 
     /**
      * @param args the command line arguments
@@ -105,9 +137,9 @@ public class frmPlacas extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JButton jButton1;
-    private javax.swing.JButton jButton2;
-    private javax.swing.JButton jButton3;
+    private javax.swing.JButton btnAtrasPlacas;
+    private javax.swing.JButton btnAutoNuevo;
+    private javax.swing.JButton btnAñadirPlaca;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JPanel jPanel1;
