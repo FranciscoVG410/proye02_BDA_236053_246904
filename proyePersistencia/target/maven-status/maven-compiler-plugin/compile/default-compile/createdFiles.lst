@@ -1,0 +1,11 @@
+EntidadesJPA\EntidadLicencia.class
+com\mycompany\proyepersistencia\ProyePersistencia.class
+EntidadesJPA\EntidadTramite.class
+EntidadesJPA\EntidadVehiculo.class
+DAOS\LicenciaDAO.class
+DAOS\PlacaDAO.class
+DAOS\VehiculoDAO.class
+DAOS\TramiteDAO.class
+EntidadesJPA\EntidadPlaca.class
+DAOS\PersonaDAO.class
+EntidadesJPA\EntidadPersona.class

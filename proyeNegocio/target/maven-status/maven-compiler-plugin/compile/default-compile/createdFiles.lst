@@ -1,0 +1,15 @@
+Negocio\ObtenerPlaca.class
+DTO\PersonaDTO.class
+DTO\VehiculoDTO.class
+Negocio\ObtenerLicencia.class
+DTO\PlacaDTO.class
+DTO\TramiteDTO.class
+Negocio\crearLicencia.class
+Negocio\CrearTramite.class
+Negocio\CrearVehiculo.class
+Negocio\ICrearLicencia.class
+Negocio\ObtenerVehiculo.class
+Negocio\CrearPlaca.class
+com\mycompany\proyenegocio\ProyeNegocio.class
+Negocio\ObtenerPersona.class
+DTO\LicenciaDTO.class
